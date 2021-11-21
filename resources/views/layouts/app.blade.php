@@ -39,17 +39,27 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
-          <span>Bootstrap UI</span>
+          <span>Posts</span>
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bootstrap UI</h6>
-            <a class="collapse-item" href="alerts.html">Alerts</a>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
-            <a class="collapse-item" href="modals.html">Modals</a>
-            <a class="collapse-item" href="popovers.html">Popovers</a>
-            <a class="collapse-item" href="progress-bar.html">Progress Bars</a>
+            <h6 class="collapse-header">Posts</h6>
+            <a class="collapse-item" href="{{ route('posts.create') }}">Add Post <i class="fas fa-plus-circle"></i> </a>
+            <a class="collapse-item" href="">All Post</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
+          aria-expanded="true" aria-controls="collapseBootstrap2">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Category</span>
+        </a>
+        <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Category</h6>
+            <a class="collapse-item" href="{{ route('categories.create') }}">Add Category <i class="fas fa-plus-circle"></i> </a>
+            <a class="collapse-item" href="{{ route('categories.index') }}">All Category</a>
           </div>
         </div>
       </li>
@@ -145,10 +155,9 @@
           </div>
 
           <div class="row mb-3">
-            <div class="col-12">
-                <div class="card mb-4">
-                    @yield('content')
-                </div>
+
+                @yield('content')
+
             </div>
         </div>
         <!---Container Fluid-->
@@ -178,6 +187,9 @@
   <script src="{{ asset('assets/admin/js/ruang-admin.min.js') }}"></script>
   <script src="{{ asset('assets/admin/vendor/chart.js/Chart.min.js') }}"></script>
   <script src="{{ asset('assets/admin/js/demo/chart-area-demo.js') }}"></script>
+
+  @yield('script')
+
 </body>
 
 </html>
